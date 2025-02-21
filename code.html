@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Donate Fund</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+        .map-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px; /* Reduced size */
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .map {
+            width: 100%;
+            height: auto;
+        }
+        .marker {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: rgba(255, 69, 0, 0.8);
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(255, 69, 0, 0.8);
+        }
+        .marker:hover {
+            background-color: rgba(255, 69, 0, 1);
+            box-shadow: 0 0 15px rgba(255, 69, 0, 1);
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+<header class="bg-gradient-to-r from-sky-400 to-sky-600 text-white">
+    <div class="container mx-auto flex justify-between items-center py-4 px-6">
+        <div class="flex items-center space-x-4">
+            <a class="text-sm" href="#">Faq</a>
+            <a class="text-sm" href="#">Help Desk</a>
+            <a class="text-sm" href="#">Support</a>
+        </div>
+        <div class="flex items-center space-x-4">
+            <a class="text-sm" href="#"><i class="fab fa-facebook-f"></i></a>
+            <a class="text-sm" href="#"><i class="fab fa-twitter"></i></a>
+            <a class="text-sm" href="#"><i class="fab fa-instagram"></i></a>
+            <a class="text-sm" href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a class="text-sm" href="#"><i class="fab fa-pinterest-p"></i></a>
+        </div>
+    </div>
+</header>
+<nav class="bg-gray-800 text-white">
+    <div class="container mx-auto flex justify-between items-center py-4 px-6">
+        <div class="flex items-center space-x-4">
+            <img alt="Logo" class="h-8" src="https://storage.googleapis.com/a1aa/image/WpXSysidtJqOaW7cK4VP9b-42JMeiKFYl3T28vQq8Pk.jpg"/>
+            <span class="font-bold text-lg">DONATE FUND</span>
+        </div>
+        <ul class="flex space-x-6">
+            <li><a class="hover:text-blue-500" href="#">Home</a></li>
+            <li><a class="hover:text-blue-500" href="#">Causes</a></li>
+            <li><a class="hover:text-blue-500" href="#">Pages</a></li>
+            <li><a class="hover:text-blue-500" href="#">Event</a></li>
+            <li><a class="hover:text-blue-500" href="#">Gallery</a></li>
+            <li><a class="hover:text-blue-500" href="#">Blog</a></li>
+            <li><a class="hover:text-blue-500" href="#">Contact</a></li>
+        </ul>
+        <div class="flex items-center space-x-4">
+            <a class="bg-blue-500 text-white px-4 py-2 rounded-full" href="#payment-options">Donate Now</a>
+            <a class="bg-blue-500 text-white px-4 py-2 rounded-full" href="#">Join Us</a>
+        </div>
+    </div>
+</nav>
+<section class="relative">
+    <img alt="Children in need" class="w-full h-96 object-cover" src="https://storage.googleapis.com/a1aa/image/ATkBlWIwiG6xGWmmbQGcEB7xU47WZmtFvt-WQIfOjVs.jpg"/>
+    <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center text-center text-white px-4">
+        <h1 class="text-4xl font-bold mb-4">Help The Poor For Their Better Future</h1>
+        <p class="text-lg mb-6">Every day we bring hope to millions of children in the world's hardest places as a sign of God's unconditional love.</p>
+        <div class="flex space-x-4">
+            <a class="bg-blue-500 text-white px-6 py-3 rounded-full" href="#payment-options">Donate Now</a>
+            <a class="bg-white text-blue-500 px-6 py-3 rounded-full" href="#">Watch About</a>
+        </div>
+    </div>
+</section>
+<section class="bg-blue-500 text-white py-8">
+    <div class="container mx-auto flex flex-wrap justify-around">
+        <div class="text-center w-full md:w-1/4">
+            <i class="fas fa-child text-4xl mb-2"></i>
+            <h3 class="font-bold text-lg">Help The Child</h3>
+            <p>We connect nonprofits, donors, and companies in nearly every country around the world.</p>
+        </div>
+        <div class="text-center w-full md:w-1/4">
+            <i class="fas fa-hands-helping text-4xl mb-2"></i>
+            <h3 class="font-bold text-lg">Become a Volunteer</h3>
+            <p>We connect nonprofits, donors, and companies in nearly every country around the world.</p>
+        </div>
+        <div class="text-center w-full md:w-1/4">
+            <i class="fas fa-hand-holding-heart text-4xl mb-2"></i>
+            <h3 class="font-bold text-lg">Get Involved</h3>
+            <p>We connect nonprofits, donors, and companies in nearly every country around the world.</p>
+        </div>
+        <div class="text-center w-full md:w-1/4">
+            <i class="fas fa-ambulance text-4xl mb-2"></i>
+            <h3 class="font-bold text-lg">Emergency Case</h3>
+            <p>We connect nonprofits, donors, and companies in nearly every country around the world.</p>
+        </div>
+    </div>
+</section>
+<!-- World Map Section -->
+<section class="py-8">
+    <div class="container mx-auto">
+        <h2 class="text-2xl font-bold text-center mb-6">Regions in Need</h2>
+        <div class="map-container">
+            <img alt="World map highlighting regions where poor labor children need support" class="map" src="https://storage.googleapis.com/a1aa/image/RP_ZlvA3iJmkRtZr7O9nAhQaAzHr35ww3XHQXN1P7wE.jpg"/>
+            <div class="marker" style="top: 30%; left: 40%;"></div>
+            <div class="marker" style="top: 50%; left: 60%;"></div>
+            <div class="marker" style="top: 70%; left: 20%;"></div>
+        </div>
+    </div>
+</section>
+<!-- Why Donate Fund Page -->
+<section class="py-8">
+    <div class="container mx-auto">
+        <h2 class="text-2xl font-bold text-center mb-6">Why Donate Fund</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <img alt="Transparency" class="w-full h-48 object-cover mb-4" src="https://storage.googleapis.com/a1aa/image/0Sh1VS3zxits_WPH3pTkgi0SMWYWrVMXBfR0NvD9KBM.jpg"/>
+                <h3 class="text-xl font-bold mb-2">Transparency</h3>
+                <p class="text-gray-700 mb-4">We ensure that every donation is used effectively and transparently.</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <img alt="Impact" class="w-full h-48 object-cover mb-4" src="https://storage.googleapis.com/a1aa/image/1l3S5CnGcDN798GphCtLFRzvZSv18y-yvhXRsZMvSWQ.jpg"/>
+                <h3 class="text-xl font-bold mb-2">Impact</h3>
+                <p class="text-gray-700 mb-4">Your donations make a real difference in the lives of those in need.</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <img alt="Community" class="w-full h-48 object-cover mb-4" src="https://storage.googleapis.com/a1aa/image/KKmrKSxOWUipT7sea29xlKxTfTlKuh0Xl5cQ4HbfIc4.jpg"/>
+                <h3 class="text-xl font-bold mb-2">Community</h3>
+                <p class="text-gray-700 mb-4">Join a community of donors who are committed to making a positive change.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- About Us Section -->
+<section class="py-8 bg-gray-200">
+    <div class="container mx-auto">
+        <h2 class="text-2xl font-bold text-center mb-6">About Us</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="flex flex-col justify-center">
+                <h3 class="text-xl font-bold mb-4">Our Mission</h3>
+                <p class="text-gray-700 mb-4">At Donate Fund, our mission is to bring hope and support to millions of children in need around the world. We strive to provide education, healthcare, and basic necessities to those who need it most.</p>
+                <h3 class="text-xl font-bold mb-4">Our Vision</h3>
+                <p class="text-gray-700 mb-4">We envision a world where every child has the opportunity to thrive and reach their full potential. Through our efforts, we aim to create lasting change and build a brighter future for all.</p>
+            </div>
+            <div>
+                <img alt="About Us" class="w-full h-96 object-cover rounded-lg" src="pexels-photo-9823013.jpeg"/>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Payment Options Page -->
+<section id="payment-options" class="py-8 bg-gray-200">
+    <div class="container mx-auto">
+        <h2 class="text-2xl font-bold text-center mb-6">Payment Options</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+                <img alt="Crypto Currency" class="w-full h-48 object-cover mb-4" src="https://files.oaiusercontent.com/file-VSWwjm6DonyyCADrYFKN9v?se=2025-02-21T13%3A30%3A12Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3D1e4d17f8-f3b8-414c-a771-64737852a89f.webp&sig=7jJJ2EOQA60F7zHt1pMf0JgIz0qu5G8qZdE9C%2BwFupo%3D"/>
+                <h3 class="text-xl font-bold mb-2">Crypto Currency</h3>
+                <p class="text-gray-700 mb-4">Donate using your Crypto Currency. We accept all major Crypto Currencies.</p>
+                <button class="bg-blue-500 text-white px-4 py-2 rounded-full" onclick="donateWithCrypto()">Donate Now</button>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+                <img alt="PayPal" class="w-full h-48 object-cover mb-4" src="https://storage.googleapis.com/a1aa/image/PSOLJUVMowE0IacNJqd0raVlv21WaGK3jtE6lavvHug.jpg"/>
+                <h3 class="text-xl font-bold mb-2">PayPal</h3>
+                <p class="text-gray-700 mb-4">Donate using PayPal. It's quick and secure.</p>
+                <a class="bg-blue-500 text-white px-4 py-2 rounded-full" href="#">Donate Now</a>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+                <img alt="Bank Transfer" class="w-full h-48 object-cover mb-4" src="https://storage.googleapis.com/a1aa/image/5YPa0xEBsgkRedt_EMzQDTsGw-sv-2DWU7aiPMr75Ao.jpg"/>
+                <h3 class="text-xl font-bold mb-2">Bank Transfer</h3>
+                <p class="text-gray-700 mb-4">Donate via bank transfer. Contact us for bank details.</p>
+                <a class="bg-blue-500 text-white px-4 py-2 rounded-full" href="#">Donate Now</a>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Contact Us Page -->
+<section class="py-8">
+    <div class="container mx-auto">
+        <h2 class="text-2xl font-bold text-center mb-6">Contact Us</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+                <i class="fas fa-phone-alt text-4xl mb-4 text-blue-500"></i>
+                <h3 class="text-xl font-bold mb-2">Phone</h3>
+                <p class="text-gray-700 mb-4">Call us at (123) 456-7890</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+                <i class="fas fa-envelope text-4xl mb-4 text-blue-500"></i>
+                <h3 class="text-xl font-bold mb-2">Email</h3>
+                <p class="text-gray-700 mb-4">Email us at info@donatefund.com</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+                <i class="fas fa-map-marker-alt text-4xl mb-4 text-blue-500"></i>
+                <h3 class="text-xl font-bold mb-2">Address</h3>
+                <p class="text-gray-700 mb-4">123 Charity St, Nonprofit City, NP 12345</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Footer -->
+<footer class="bg-gray-800 text-white py-8">
+    <div class="container mx-auto text-center">
+        <div class="mb-4">
+            <a class="text-white hover:text-blue-500 mx-2" href="#">Home</a>
+            <a class="text-white hover:text-blue-500 mx-2" href="#">Causes</a>
+            <a class="text-white hover:text-blue-500 mx-2" href="#">Pages</a>
+            <a class="text-white hover:text-blue-500 mx-2" href="#">Event</a>
+            <a class="text-white hover:text-blue-500 mx-2" href="#">Gallery</a>
+            <a class="text-white hover:text-blue-500 mx-2" href="#">Blog</a>
+            <a class="text-white hover:text-blue-500 mx-2" href="#">Contact</a>
+        </div>
+        <div class="mb-4">
+            <a class="text-white hover:text-blue-500 mx-2" href="#"><i class="fab fa-facebook-f"></i></a>
+            <a class="text-white hover:text-blue-500 mx-2" href="#"><i class="fab fa-twitter"></i></a>
+            <a class="text-white hover:text-blue-500 mx-2" href="#"><i class="fab fa-instagram"></i></a>
+            <a class="text-white hover:text-blue-500 mx-2" href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a class="text-white hover:text-blue-500 mx-2" href="#"><i class="fab fa-pinterest-p"></i></a>
+        </div>
+        <p class="text-sm">© 2023 Donate Fund. All rights reserved.</p>
+    </div>
+</footer>
+
+<script>
+    async function donateWithCrypto() {
+        if (typeof window.ethereum !== 'undefined') {
+            const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
+            const account = accounts[0];
+            const amount = prompt("Enter the amount you want to donate in ETH:");
+            const transactionParameters = {
+                to: '0xYourEthereumAddressHere', // Replace with your Ethereum address
+                from: account,
+                value: (amount * 1e18).toString(16), // Convert to Wei
+            };
+            try {
+                await window.ethereum.request({
+                    method: 'eth_sendTransaction',
+                    params: [transactionParameters],
+                });
+                alert('Donation successful!');
+            } catch (error) {
+                console.error(error);
+                alert('Donation failed. Please try again.');
+            }
+        } else {
+            alert('Please install MetaMask to use this feature.');
+        }
+    }
+</script>
+</body>
+</html>
